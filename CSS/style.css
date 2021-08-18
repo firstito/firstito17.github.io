@@ -1,0 +1,304 @@
+/* font */
+@font-face {
+    font-family: 'rokkit';
+    src: url(../fonts/rokkitt-regular-webfont.woff) format('woff');
+}
+
+/* style utama */
+body {
+    font: 18px/36px 'rokkit', 'Arial Narrow';
+    background-color: rgb(194, 190, 189);
+}
+
+h1 {
+    font-size: 70px;
+    margin: 50px 0;
+    text-align: center;
+    text-shadow: 1px 0px 2px white;
+}
+
+h2 {
+    font-size: 50px;
+    margin: 30px 0;
+    text-align: center;
+    text-shadow: 1px 0px 2px white;
+}
+
+.body h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #636363;
+    margin: 15px 0 0;
+    line-height: 21px;
+}
+
+body div.page div.body {
+    color: #606060;
+    text-align: justify;
+    margin: 50px 150px;
+}
+
+
+
+.body p {
+    font-size: 16px;
+    text-align: justify;
+    color: #636363;
+    margin: 0 0 20px;
+    line-height: 21px;
+}
+
+.body p a {
+    outline: none;
+    color: #636363;
+}
+
+
+.container {
+    width: 800px;
+    background-color: coral;
+    margin: auto;
+    padding: 30px;
+    box-shadow: 0 0 3px 3px rgb(0, 0, 0, .3);
+    border-radius: 8px;
+}
+
+.gallery li {
+    width: 120px;
+    height: 120px;
+    /* overflow: hidden; */
+    border: 5px solid #666;
+    float: left;
+    margin-right: 70px;
+    position: relative;
+}
+
+.gallery li span {
+    display: block;
+    width: 120px;
+    height: 120px;
+    background-color: rgba(180, 174, 174, 0.5);
+    position: absolute;
+    top: 0;
+    text-align: center;
+    line-height: 120px;
+    color: rgb(173, 31, 31);
+    text-shadow: 1px 1px 1px rgb(19, 17, 17);
+    opacity: 0;
+    transition: .3s;
+}
+
+.gallery li,
+.gallery li img,
+.gallery li span {
+    border-radius: 50%;
+}
+
+.gallery li a:hover span {
+    opacity: 1;
+}
+
+.clear {
+    clear: both;
+}
+
+/* button */
+.btn {
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid #e74c3c;
+    border-radius: 0.6em;
+    color: #e74c3c;
+    cursor: pointer;
+    display: flex;
+    align-self: center;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1;
+    margin: 100px 600px;
+    padding: .5em 1em;
+    text-decoration: none;
+    text-align: initial;
+    font-weight: 700;
+}
+
+.btn:hover,
+.btn:focus {
+    color: #fff;
+    outline: 0;
+}
+
+.third {
+    border-color: #db8d34;
+    color: #fff;
+    box-shadow: 0 0 40px 40px coral inset, 0 0 0 0 #3498db;
+    transition: all 150ms ease-in-out;
+}
+
+.third:hover {
+    box-shadow: 0 0 10px 0 #e0ab48 inset, 0 0 10px 4px #e0ab48;
+}
+
+/* CSS Resets */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+ul,
+ol {
+    list-style-type: none;
+}
+
+/* end css reset */
+.kotak {
+    /* posisikan letak slidernya */
+    margin: 10px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.kotak,
+ul.slide li img {
+    width: 700px;
+    /* Sesuaikan sendiri */
+    height: 600px;
+    /* Sesuaikan sendiri */
+}
+
+ul.slide {
+    position: absolute;
+    display: block;
+    width: 400%;
+    /* <– Angka 3 Bergantung pada jumlah slide */
+}
+
+
+/* Yang membuatnya jadi slider, alias kode intinya */
+ul.slide li {
+    display: inline-block;
+    float: left;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    ox-sizing: border-box;
+    -webkit-transition: -webkit-transform 2000ms;
+    -moz-transition: -moz-transform 2000ms;
+    transition: -webkit-transform 2000ms, transform 2000ms;
+}
+
+ul.slide li.slide-1 {
+    left: 0%;
+}
+
+ul.slide li.slide-2 {
+    left: 100%;
+}
+
+ul.slide li.slide-3 {
+    left: 100%;
+}
+
+ul.slide li.slide-4 {
+    left: 100%;
+}
+
+#nav-1:checked~ul.slide li {
+    -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    transform: translateX(0%);
+}
+
+#nav-2:checked~ul.slide li {
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    transform: translateX(-100%);
+}
+
+#nav-3:checked~ul.slide li {
+    -webkit-transform: translateX(-200%);
+    -moz-transform: translateX(-200%);
+    transform: translateX(-200%);
+}
+
+#nav-4:checked~ul.slide li {
+    -webkit-transform: translateX(-300%);
+    -moz-transform: translateX(-300%);
+    transform: translateX(-300%);
+}
+
+/* End, yang membuatnya jadi slider */
+/* Navigator */
+.radio-nav {
+    /* menghilangkan radio button */
+    display: none;
+}
+
+/* styling untuk tombol next dan previous slide */
+.nav-arrow {
+    position: absolute;
+    top: 45%;
+    width: 50px;
+    height: 50px;
+}
+
+.nav-next {
+    right: 10px;
+}
+
+.nav-prev {
+    left: 10px;
+}
+
+.nav-arrow label {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    padding: 15px 20px;
+    cursor: pointer;
+    z-index: 1;
+    opacity: 0;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.kotak:hover .nav-arrow label {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* end styling untuk tombol next dan previous slide */
+/* Ini termasuk kode inti. Setiap slide mempunya tombol prev dan next-nya masing-masing. Nah, tampilkan tombol yang tepat dengan kode dibawah ini*/
+#nav-1:checked~.nav-prev label.nav-4,
+#nav-1:checked~.nav-next label.nav-2,
+#nav-2:checked~.nav-prev label.nav-1,
+#nav-2:checked~.nav-next label.nav-3,
+#nav-3:checked~.nav-prev label.nav-2,
+#nav-3:checked~.nav-next label.nav-4,
+#nav-4:checked~.nav-prev label.nav-3,
+#nav-4:checked~.nav-next label.nav-1 {
+    z-index: 2;
+    opacity: 1;
+}
+
+/* end */
+/* Navigator */
+.footer p {
+    text-align: center;
+    color: #5b5b5b;
+    font-size: 10px;
+    font-family: Trebuchet MS;
+    font-weight: bold;
+    margin: 50px;
+}
